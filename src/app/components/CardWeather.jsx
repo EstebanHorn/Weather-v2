@@ -23,15 +23,14 @@ function getIconCode(weather) {
 }
 
 export default function CardWeather({ weather}) {
-    console.log(weather);
     return (
-        <div className=" rounded-xl p-5 h-full flex justify-between items-center text-app-white-1 ">
+        <div className=" rounded-xl w-full p-5 h-full flex justify-between items-center text-app-white-1 ">
             <div className=" flex flex-col justify-between h-full">
                 <h3 className=" text-3xl">{weather.name}</h3>
-                <h3 className="text-7xl">{Math.round(weather.main.temp)} °C</h3>
+                <h3 className="md:text-7xl text-5xl">{Math.round(weather.main.temp)} °C</h3>
             </div>
             <div className="w-fit h-fit">
-                <h3 className="text-9xl">{getIconCode(weather.weather[0].main)}</h3>
+                <h3 className="md:text-9xl text-7xl">{getIconCode(weather.weather[0].main)}</h3>
             </div>
         </div>
     )

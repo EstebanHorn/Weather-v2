@@ -4,30 +4,88 @@
     grid-template-rows: 0.2fr 1fr repeat(2, 1fr);
     grid-column-gap: 15px;
     grid-row-gap: 15px;
+    height: 100vh;
+    padding: 1.25rem;
 }
 
+
+/**/
+@media screen and (max-width: 1200px) {
+    .gridparent {
+        display: grid;
+        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-rows: repeat(2, 0.6fr) repeat(3, 1fr) 2fr; /* Definición de filas */
+        min-height: 100vh; /* Asegura que el contenedor ocupe al menos el alto de la ventana */
+        padding: 1rem; /* Espacio interior alrededor del contenido */
+        align-items: center; /* Alinea verticalmente los elementos en el centro de sus celdas */
+        justify-items: center; /* Alinea horizontalmente los elementos en el centro de sus celdas */
+        margin: auto; /* Centra el contenedor si su ancho es menor que el contenedor padre */
+        width: 100%; /* Ancho del contenedor al 100% del ancho de su contenedor padre */
+    }  
+}
 .grid1 {
     grid-area: 1 / 1 / 5 / 2;
+}
+
+@media screen and (max-width: 768px) {
+    .grid1 {
+      grid-area: 1 / 1 / 2 / 2;    }
+  
 }
 
 .grid2 {
     grid-area: 1 / 2 / 2 / 3;
 }
 
+@media screen and (max-width: 768px) {
+    .grid2 {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+  
+}
+
 .grid3 {
     grid-area: 2 / 2 / 3 / 3;
+}
+
+@media screen and (max-width: 768px) {
+    .grid3 {
+      grid-area: 3 / 1 / 4 / 2;
+    }
+  
 }
 
 .grid4 {
     grid-area: 3 / 2 / 4 / 3;
 }
 
+@media screen and (max-width: 768px) {
+    .grid4 {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+  
+}
+
 .grid5 {
     grid-area: 4 / 2 / 5 / 3;
 }
 
+@media screen and (max-width: 768px) {
+    .grid5 {
+        grid-area: 5 / 1 / 6 / 2;
+    }
+  
+}
+
 .grid6 {
     grid-area: 2 / 3 / 5 / 4;
+}
+
+@media screen and (max-width: 768px) {
+    .grid6 {
+        grid-area: 6 / 1 / 7 / 2;
+    }
+  
 }
 
 /* HTML: <div class="loader"></div> */
@@ -56,4 +114,19 @@
   }
   @keyframes l2 {
     100% {filter:drop-shadow(0px 0px 20px #ffd738)}
+  }
+
+  /* HTML: <div class="loader"></div> */
+.loader2 {
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: 
+      radial-gradient(farthest-side,#ffc62d 90%,#270e0e00) top/6px 6px no-repeat,
+      conic-gradient(#0000 30%,#ffc62d);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 6px),#000 0);
+    animation: l13 1s infinite linear;
+  }
+  @keyframes l13{ 
+    100%{transform: rotate(1turn)}
   }

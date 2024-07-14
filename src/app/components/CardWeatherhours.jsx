@@ -30,18 +30,17 @@ function getIconCode(weather) {
 }
 
 export default function CardWeatherhours({ array }) {
-    console.log(array.list );
     return (
-        <ul className="flex flex-row h-full w-full bg-gradient-3 bg-opacity-10 rounded-2xl text-app-white-1 divide-x-2 p-10 border-2">  
+        <ul className="flex h-full w-full md:flex-nowrap flex-wrap bg-gradient-3 bg-opacity-10 rounded-2xl text-app-white-1 md:divide-x-2 md:items-start items-center md:p-10 p-3 border-2">  
             {array.list.map((item, index) => (
-                <li key={index} className="h-full w-full flex flex-col items-center justify-between">
-                    <h3 className="text-3xl">{getHour(item.dt_txt)}:00</h3>
-                    <div className="flex flex-col items-center justify-center">
-                     <h4 className="text-2xl">{getIconCode(item.weather[0].main)}</h4>
-                        <h4 className="text-sm">{item.weather[0].description}</h4>
+                <li key={index} className="md:h-full md:w-full flex flex-col items-center justify-between md:p-0 p-2 md:gap-0 gap-2 ">
+                    <h3 className="md:text-3xl">{getHour(item.dt_txt)}:00</h3>
+                    <div className="flex flex-col items-center justify-center md:gap-0 gap-2">
+                     <h4 className="md:text-4xl text-2xl">{getIconCode(item.weather[0].main)}</h4>
+                        <h4 className="md:text-sm text-xs text-center">{item.weather[0].description}</h4>
                     </div>
 
-                    <h4 className="text-xl">{Math.round(item.main.temp)}°C</h4>
+                    <h4 className="md:text-xl text-sm">{Math.round(item.main.temp)}°C</h4>
                 </li>
             ))}
         </ul>

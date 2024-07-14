@@ -63,18 +63,18 @@ export default function CardWeatherWeak( {array} ) {
         <ul className="h-full w-full bg-opacity-10 bg-gradient-4 rounded-2xl p-5 text-app-white-1 grid grid-row-7  divide-y-2 border-2">
             {array.map((item, index) => (
                 <li key={index} className="flex justify-between px-5 items-center">
-                    <h3 className="text-xl w-1/4">Día {getDayname(today+1, index)} {numberDay + index + 1}</h3>
-                    <div className="flex flex-col items-center gap-1  w-1/4">
-                    <p className="text-sm first-letter:uppercase">{item.weather[0].description}</p>
-                        <p className="text-5xl">{getIconCode(item.weather[0].main)}</p>
+                    <h3 className="md:text-xl text-xs w-1/4">{getDayname(today+1, index)} {numberDay + index + 1}</h3>
+                    <div className="flex flex-col items-center gap-1  w-1/3">
+                    <p className="md:text-sm text-xs first-letter:uppercase">{item.weather[0].description}</p>
+                        <p className="md:text-5xl text-2xl">{getIconCode(item.weather[0].main)}</p>
                     </div>
                     <div className="flex flex-col items-center justify-center gap-1 w-1/4">
-                        <p className="text-sm">Minima</p>
-                        <p className="text-3xl">{Math.round(item.temp.min)}°C</p>
+                        <p className="md:text-sm text-xs">Minima</p>
+                        <p className="md:text-3xl">{Math.round(item.temp.min)}°C</p>
                     </div>
                     <div className="flex flex-col items-center justify-center gap-1">
-                        <p className="text-sm">Maxima</p>
-                        <p className="text-3xl">{Math.round(item.temp.max)}°C</p>
+                        <p className="md:text-sm text-xs">Maxima</p>
+                        <p className="md:text-3xl">{Math.round(item.temp.max)}°C</p>
                     </div>
                 </li>
             ))}

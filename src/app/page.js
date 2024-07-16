@@ -61,7 +61,7 @@ export default function Home() {
       return;
     }
     console.log(e.target[0].value);
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${e.target[0].value}&limit=5&appid=0127d4c6eef8ace666ed0071b86345c7`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${e.target[0].value}&limit=5&appid=0127d4c6eef8ace666ed0071b86345c7`)
       .then((res) => res.json())
       .then((data) => {
         if (data.length ===  0) {

@@ -50,19 +50,34 @@ export default function Home() {
     e.preventDefault();
     // Agrega la lógica para la búsqueda aquí
     // http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}
+    if (e.target[0].value === "") {
+      alert("Ingrese una ciudad");
+      setLoad(false);
+      return;
+    }
+    if (e.target[0].value.length < 3) {
+      alert("Ingrese una ciudad valida");
+      setLoad(false);
+      return;
+    }
+    console.log(e.target[0].value);
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${e.target[0].value}&limit=5&appid=0127d4c6eef8ace666ed0071b86345c7`)
       .then((res) => res.json())
       .then((data) => {
-        if (data.length === 0) {
+        if (data.length ===  0) {
           alert("No se encontraron resultados");
           setLoad(false);
           return;
         }
-        console.log(data);
         setLat(data[0].lat);
         setLon(data[0].lon);
         setLoad(false);
-      });
+      })
+      .catch((error) => {
+        alert("Error al buscar la ciudad");
+        setLoad(false);
+      }
+      );
   };
   const ubicacionActual = () => {
     // Verifica si el navegador soporta la API de permisos

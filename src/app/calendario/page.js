@@ -72,15 +72,14 @@ export default function Calendario() {
     return (
         <section className="grid-parent p-5">
             <Navbar/>
-            <ul className="container h-full w-full bg-gradient-blue">
-                {console.log(forecast)}
+            <ul className="container md:h-full bg-gradient-blue md:w-full ">
                 {forecast && forecast.list.map((forecast, index) => (
                     <li key={forecast.dt} className="item-container">
-                        <h3 className="text-sm">{addDay(today, index).getDate()} de {getMonth(addDay(today, index))}</h3>
-                        <h4 className="text-5xl">{getIconCode(forecast.weather[0].main)}</h4>
-                        <div className="w-full flex justify-between items-center">
-                            <h2>min: {Math.round(forecast.temp.min)}°C</h2>
-                            <h2>max: {Math.round(forecast.temp.max)}°C</h2>
+                        <h3 className="mc:text-sm text-[10px]">{addDay(today, index).getDate()} de {getMonth(addDay(today, index))}</h3>
+                        <h4 className="md:text-5xl text-3xl">{getIconCode(forecast.weather[0].main)}</h4>
+                        <div className="w-full flex md:flex-row flex-col justify-between items-start">
+                            <h2 className="md:text-base text-[10px]">min: {Math.round(forecast.temp.min)}°C</h2>
+                            <h2 className="md:text-base text-[10px]">max: {Math.round(forecast.temp.max)}°C</h2>
                         </div>
 
                     </li>

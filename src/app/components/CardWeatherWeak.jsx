@@ -50,7 +50,6 @@ function getIconCode(weather) {
 }
 
 export default function CardWeatherWeak( {array} ) {
-    console.log(array);
 
     const today = new Date().getDay();
     const numberDay = new Date().getDate();

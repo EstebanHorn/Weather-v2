@@ -60,7 +60,6 @@ export default function Home() {
       setLoad(false);
       return;
     }
-    console.log(e.target[0].value);
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${e.target[0].value}&limit=5&appid=0127d4c6eef8ace666ed0071b86345c7`)
       .then((res) => res.json())
       .then((data) => {
@@ -108,7 +107,7 @@ export default function Home() {
         setLat(position.coords.latitude);
         setLon(position.coords.longitude);
       }, (error) => {
-        console.error('Error al obtener la ubicación:', error);
+        alert("Error al obtener la ubicación");
       });
     }
   };
@@ -141,7 +140,8 @@ export default function Home() {
                 Buscar
               </button>
               <button className="bg-app-white-1 text-app-white-1 bg-opacity-10 rounded-xl p-2 text-sm"
-              onClick={ubicacionActual}
+               onClick={ubicacionActual}
+               type="button"
             >
               Mi ubicación
             </button>
@@ -151,7 +151,7 @@ export default function Home() {
           <div className="grid3 md:w-full w-11/12">
             <CardWeather weather={weather} />
           </div>
-          <div className="grid4 md:w-full w-11/12 h-full container">
+          <div className="grid4 md:w-full w-11/12 md:h-full h-40 relative md:static">
             <CardWeatherhours array={weatherhours} />
           </div>
           <div className="grid5 md:w-full w-11/12">

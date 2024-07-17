@@ -1,5 +1,6 @@
 import { IoSunny , IoRainy, IoThunderstorm, IoSnow , IoCloudy , IoPartlySunny  } from "react-icons/io5";
 import { MdAir, MdFoggy } from "react-icons/md";
+import "./CardWeatherhours.css";
 
 // Función para obtener la hora
 function getHour(date) {
@@ -31,9 +32,9 @@ function getIconCode(weather) {
 
 export default function CardWeatherhours({ array }) {
     return (
-        <ul className="flex h-full w-full md:flex-nowrap flex-wrap bg-gradient-3 bg-opacity-10 rounded-2xl text-app-white-1 md:divide-x-2 md:items-start items-center md:p-10 p-3 border-2">  
+          <ul className="scroll-flex bg-gradient-3 w-auto bg-opacity-10 rounded-2xl text-app-white-1 md:divide-x-2 md:items-start md:p-10 p-3 border-2">  
             {array.list.map((item, index) => (
-                <li key={index} className="md:h-full md:w-full flex flex-col items-center justify-between md:p-0 p-2 md:gap-0 gap-2 ">
+                <li key={index} className="card md:h-full md:w-full items-center justify-between md:p-0 p-2 md:gap-0 gap-2 ">
                     <h3 className="md:text-3xl">{getHour(item.dt_txt)}:00</h3>
                     <div className="flex flex-col items-center justify-center md:gap-0 gap-2">
                      <h4 className="md:text-4xl text-2xl">{getIconCode(item.weather[0].main)}</h4>

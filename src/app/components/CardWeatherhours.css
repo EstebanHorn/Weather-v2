@@ -1,0 +1,43 @@
+.scroll-flex{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .scroll-flex{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .card{
+        flex: 0 0 auto;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+

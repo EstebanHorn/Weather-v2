@@ -23,6 +23,7 @@ function getIconCode(weather) {
 }
 
 export default function CardWeather({ weather}) {
+    console.log(weather)
     return (
         <div className=" rounded-xl w-full p-5 h-full flex justify-between items-center text-app-white-1 ">
             <div className=" flex flex-col justify-between h-full">
